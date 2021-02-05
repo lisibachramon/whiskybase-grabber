@@ -1,0 +1,14 @@
+{
+    "require": {
+        "symfony/console": "^3.4",
+        "php-ai/php-ml": "^0.8.0",
+      "ext-dom": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\Command\\": "src/commands",
+            "App\\Db\\": "src/db",
+            "App\\Model\\": "src/model"
+        }
+    }
+}
