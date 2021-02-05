@@ -92,7 +92,7 @@ class Base extends Command
                 $timediff = $this->endtime - $this->starttime;
 
                 $remaining = $this->secondsToTime(((int)$timediff / $percent * 100 )- (int)$timediff);
-                system("clear && printf '\e[3J'");
+
                 echo $i . " / " . $input->getArgument('to') . " time remaining= $remaining \n";
             }
         $this->reset();
