@@ -5,7 +5,7 @@ volumes:
         driver: local
 
 services:
-    discount:
+    whisky:
         build:
           context: .
           dockerfile: Dockerfile
