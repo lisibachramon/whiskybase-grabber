@@ -10,6 +10,7 @@ services:
           context: .
           dockerfile: Dockerfile
         working_dir: /var/www/site
+        restart: always
         hostname: whisky_svc
         container_name: whisky_svc
         environment:
