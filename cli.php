@@ -6,7 +6,7 @@
  * Time: 09:24
  */
 
-set_time_limit(50000);
+set_time_limit(0);
 require __DIR__.'/vendor/autoload.php';
 
 use App\Command\Base;
