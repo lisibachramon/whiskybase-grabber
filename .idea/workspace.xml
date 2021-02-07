@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b356bcc1-a809-45da-9f89-aa2d1cfe1bb5" name="Default" comment="">
+    <list default="true" id="b356bcc1-a809-45da-9f89-aa2d1cfe1bb5" name="Default" comment="special char removed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ArrayObject.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ArrayObject.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Whiskybase.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Whiskybase.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,15 +86,37 @@
       <workItem from="1559912837963" duration="461000" />
       <workItem from="1612525559206" duration="14353000" />
       <workItem from="1612606731972" duration="762000" />
-      <workItem from="1612699042040" duration="619000" />
+      <workItem from="1612699042040" duration="1176000" />
+      <workItem from="1612716895783" duration="887000" />
     </task>
+    <task id="LOCAL-00001" summary="special char removed">
+      <created>1612699684483</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1612699684483</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="special char removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="special char removed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612527149971">
@@ -86,10 +127,10 @@
       <screen x="0" y="23" width="1440" height="841" />
     </state>
     <state x="465" y="252" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.841@0.23.1440.841" timestamp="1612525568096" />
-    <state x="320" y="183" key="Vcs.Push.Dialog.v2" timestamp="1612699644724">
+    <state x="320" y="183" key="Vcs.Push.Dialog.v2" timestamp="1612699687390">
       <screen x="0" y="23" width="1440" height="841" />
     </state>
-    <state x="320" y="183" key="Vcs.Push.Dialog.v2/0.23.1440.841@0.23.1440.841" timestamp="1612699644724" />
+    <state x="320" y="183" key="Vcs.Push.Dialog.v2/0.23.1440.841@0.23.1440.841" timestamp="1612699687390" />
     <state x="421" y="169" width="598" height="548" key="find.popup" timestamp="1612526219724">
       <screen x="0" y="23" width="1440" height="841" />
     </state>

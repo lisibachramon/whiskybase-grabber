@@ -24,7 +24,7 @@ abstract class ArrayObject
 	{
 		foreach ($this->getProperties() as $prop) {
 			if (array_key_exists($prop, $data)) {
-				$this->{$prop} = html_entity_decode($data[$prop], ENT_QUOTES | ENT_XML1, 'UTF-8');
+				$this->{$prop} = $this->strip(html_entity_decode($data[$prop], ENT_QUOTES | ENT_XML1, 'UTF-8'));
 			}
 		}
 	}
@@ -58,4 +58,19 @@ abstract class ArrayObject
 
 		return $this->properties;
 	}
+    private function strip($strip)
+    {
+        $clear = strip_tags($strip);
+// Clean up things like &amp;
+        $clear = html_entity_decode($clear);
+// Strip out any url-encoded stuff
+        $clear = urldecode($clear);
+// Replace non-AlNum characters with space
+        $clear = preg_replace('/[^A-Za-z0-9]/', ' ', $clear);
+// Replace Multiple spaces with single space
+        $clear = preg_replace('/ +/', ' ', $clear);
+// Trim the string of leading/trailing space
+        return trim($clear);
+
+    }
 }
