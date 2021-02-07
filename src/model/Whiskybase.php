@@ -45,6 +45,7 @@ class Whiskybase extends ArrayObject
     public function verify()
     {
         $this->vintage = $this->date($this->vintage);
+        $this->serie = $this->serie($this->serie);
         $this->bottled = $this->date($this->bottled);
         $this->strength = $this->strength($this->strength);
         $this->size = $this->size($this->size);
@@ -72,7 +73,7 @@ class Whiskybase extends ArrayObject
         }
         $timestamp = date($format, strtotime($date));
         if($timestamp != $date){
-            return "";
+            return null;
         }
 
         return $date;
@@ -81,6 +82,21 @@ class Whiskybase extends ArrayObject
     private function strength($strength)
     {
         return str_replace(" % Vol.", "", $strength);
+    }
+    private function serie($serie)
+    {
+        $clear = strip_tags($serie);
+// Clean up things like &amp;
+        $clear = html_entity_decode($clear);
+// Strip out any url-encoded stuff
+        $clear = urldecode($clear);
+// Replace non-AlNum characters with space
+        $clear = preg_replace('/[^A-Za-z0-9]/', ' ', $clear);
+// Replace Multiple spaces with single space
+        $clear = preg_replace('/ +/', ' ', $clear);
+// Trim the string of leading/trailing space
+        return trim($clear);
+
     }
 
     private function size($size)
