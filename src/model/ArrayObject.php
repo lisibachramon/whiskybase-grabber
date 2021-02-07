@@ -69,6 +69,7 @@ abstract class ArrayObject
         $clear = preg_replace('/[^A-Za-z0-9]/', ' ', $clear);
 // Replace Multiple spaces with single space
         $clear = preg_replace('/ +/', ' ', $clear);
+        $clear = str_replace("N/A", null, $clear);
 // Trim the string of leading/trailing space
         return trim($clear);
 
