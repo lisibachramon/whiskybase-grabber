@@ -61,17 +61,15 @@ class Whiskybase extends ArrayObject
 
         $format = 'd.m.Y';
 
-        $time = explode('.',$date);
-        if (sizeof($time)==1)
-        {
-            $date = '01.01.'.$date;
+        $time = explode('.', $date);
+        if (sizeof($time) == 1) {
+            $date = '01.01.' . $date;
         }
-        if (sizeof($time)==2)
-        {
-            $date = '31.'.$date;
+        if (sizeof($time) == 2) {
+            $date = '31.' . $date;
         }
         $timestamp = date($format, strtotime($date));
-        if($timestamp != $date){
+        if ($timestamp != $date) {
             return null;
         }
 
@@ -80,9 +78,15 @@ class Whiskybase extends ArrayObject
 
     private function strength($strength)
     {
-        return str_replace(" % Vol.", "", $strength);
+        $strength = str_replace("Vol.", "", $strength);
+        $strength = str_replace("Vol", "", $strength);
+        $strength = str_replace("Barcode", "", $strength);
+        $strength = str_replace("(proof)", "", $strength);
+        $strength = str_replace("Added on", "", $strength);
+        $strength = str_replace("Vintage", "", $strength);
+        $strength = str_replace("%", "", $strength);
+        return $strength;
     }
-
 
 
     private function size($size)

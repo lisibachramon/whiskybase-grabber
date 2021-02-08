@@ -15,9 +15,11 @@ use Symfony\Component\Console\Application;
 $base = new Base();
 $auction = new \App\Command\Auction();
 $match = new \App\Command\Match();
+$secMatch = new \App\Command\AuctionMatchBase();
 $application = new Application();
 $application->add($base);
 $application->add($match);
+$application->add($secMatch);
 $application->add($auction);
 
 $application->run();
