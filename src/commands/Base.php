@@ -52,7 +52,7 @@ class Base extends Command
             // the full command description shown when running the command with
             // the "--help" option
             ->setHelp('This command allows you refresh whiskybase dataset with latest post.');
-        $this->starttime =  $this->microtime_float();
+        $this->starttime = $this->microtime_float();
         /* do stuff here */
 
     }
@@ -79,23 +79,22 @@ class Base extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $db= new Db();
-        for($i = $input->getArgument('from');$input->getArgument('to') >=$i; $i++)
-        {
-        $this->getPost($this->host, $i, $db);
+        $db = new Db();
+        for ($i = $input->getArgument('from'); $input->getArgument('to') >= $i; $i++) {
+            $this->getPost($this->host, $i, $db);
             if (strpos($this->result['name'], "Oops") === false) {
                 $whisky = new Whiskybase($this->result);
                 $whisky->verify();
                 $db->insertWhisky($whisky->getArrayCopy());
-                $percent = 100/ ((int)$input->getArgument('to') - $input->getArgument('from')) * ($i - $input->getArgument('from') + 1);
+                $percent = 100 / ((int)$input->getArgument('to') - $input->getArgument('from')) * ($i - $input->getArgument('from') + 1);
                 $this->endtime = $this->microtime_float();
                 $timediff = $this->endtime - $this->starttime;
 
-                $remaining = $this->secondsToTime(((int)$timediff / $percent * 100 )- (int)$timediff);
+                $remaining = $this->secondsToTime(((int)$timediff / $percent * 100) - (int)$timediff);
 
                 echo $i . " / " . $input->getArgument('to') . " time remaining= $remaining \n";
             }
-        $this->reset();
+            $this->reset();
         }
 
     }
@@ -153,10 +152,10 @@ class Base extends Command
             }
         }
 
-
-
     }
-    private function getValue($urlContents){
+
+    private function getValue($urlContents)
+    {
         $c = explode('<div class="block-price">', $urlContents)[1];
         $c = explode('<div class="block-shoplinks">', $c)[0];
         $c = strip_tags($c);
@@ -169,6 +168,7 @@ class Base extends Command
         return round((float)$c);
 
     }
+
     private function curl_get_contents($url)
     {
         $config['useragent'] = 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0';
@@ -183,15 +183,17 @@ class Base extends Command
         curl_close($ch);
         return $data;
     }
+
     private function secondsToTime($s)
     {
         $h = floor($s / 3600);
         $s -= $h * 3600;
         $m = floor($s / 60);
         $s -= $m * 60;
-        return $h.':'.sprintf('%02d', $m).':'.sprintf('%02d', $s);
+        return $h . ':' . sprintf('%02d', $m) . ':' . sprintf('%02d', $s);
     }
-   private function microtime_float()
+
+    private function microtime_float()
     {
         list($usec, $sec) = explode(" ", microtime());
         return ((float)$usec + (float)$sec);
