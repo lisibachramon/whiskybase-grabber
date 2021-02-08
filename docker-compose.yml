@@ -10,6 +10,8 @@ services:
           context: .
           dockerfile: Dockerfile
         working_dir: /var/www/site
+        stdin_open: true # docker run -i
+        tty: true        # docker run -t
         restart: always
         hostname: whisky_svc
         container_name: whisky_svc

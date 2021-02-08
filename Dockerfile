@@ -43,5 +43,6 @@ RUN crontab /etc/cron.d/hello-cron
 RUN touch /var/log/script.log
 
 # Run the command on container startup
-CMD cron && tail -f /var/log/script.log
 CMD ["/bin/bash", "/var/www/entry.sh"]
+CMD cron && tail -f /var/log/script.log
+
