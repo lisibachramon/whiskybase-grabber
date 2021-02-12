@@ -60,8 +60,8 @@ class AuctionMatchBase extends Command
 
             $ids = $db->get($q);
 
-            echo $re['name'];
-            echo $q; die;
+            echo $re['name'] . " | ";
+
             $baseIdMatch = " AND (";
             foreach ($ids as $id) {
                 $baseIdMatch .= "whiskeybase_id = " . $id['whiskeybase_id'] . " OR ";
@@ -74,10 +74,10 @@ class AuctionMatchBase extends Command
             }
 
             $auctionLotName = $re['name'] ;
-            $auctionLotName = str_replace('years old', '', $auctionLotName);
-            $auctionLotName = str_replace('Years Old', '', $auctionLotName);
-            $auctionLotName = str_replace('Year Old', '', $auctionLotName);
-            $auctionLotName = str_replace('year old', '', $auctionLotName);
+            $auctionLotName = str_replace('years old ', '', $auctionLotName);
+            $auctionLotName = str_replace('Years Old ', '', $auctionLotName);
+            $auctionLotName = str_replace('Year Old ', '', $auctionLotName);
+            $auctionLotName = str_replace('year old ', '', $auctionLotName);
 
             $auctionLotNameArr = explode(" ", $auctionLotName);
 
@@ -105,6 +105,7 @@ class AuctionMatchBase extends Command
                     $count++;
                 }
             }
+            print_r($auctionLotNameArr);
             print_r($matches);
             die;
             if ($count == 1 && ($max / sizeof($auctionLotNameArr)) >= 0.6) {
