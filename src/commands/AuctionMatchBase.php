@@ -88,6 +88,7 @@ class AuctionMatchBase extends Command
 
             }
             $max = max($matches);
+
             $count = 0;
             foreach ($matches as $item) {
                 if ($item === $max) {
@@ -96,6 +97,7 @@ class AuctionMatchBase extends Command
             }
             print_r($auctionLotNameArr);
             print_r($matches);
+            echo array_search($max, $matches);
             die;
             if ($count == 1 && ($max / sizeof($auctionLotNameArr)) >= 0.6) {
                 echo "Accuracy: " . ($max / sizeof($auctionLotNameArr)) . "\n";
