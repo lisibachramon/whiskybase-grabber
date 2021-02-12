@@ -18,6 +18,7 @@ class Whiskybase extends ArrayObject
 
     public $whiskeybase_id;
     public $name;
+    public $description;
     public $category;
     public $bottler;
     public $serie;

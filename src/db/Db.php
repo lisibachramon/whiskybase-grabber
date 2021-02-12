@@ -29,10 +29,11 @@ class Db
 
     public function insertWhisky($whisky)
     {
-        $stmt = $this->dbh->prepare("Replace INTO `whisky`.`whiskeybase` (`whiskeybase_id`, `name`, `bottler`, `category`, `serie`, `vintage`, `bottled`, `casktype`, `number`, `strength`, `size`, `value`)
- VALUES (:id, :name, :bottler, :category, :serie, :vintage, :bottled, :casktype, :number, :strength, :size, :value); ");
+        $stmt = $this->dbh->prepare("Replace INTO `whisky`.`whiskeybase` (`whiskeybase_id`, `name`, `description`, `bottler`, `category`, `serie`, `vintage`, `bottled`, `casktype`, `number`, `strength`, `size`, `value`)
+ VALUES (:id, :name, :description, :bottler, :category, :serie, :vintage, :bottled, :casktype, :number, :strength, :size, :value); ");
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':description', $description);
         $stmt->bindParam(':bottler', $bottler);
         $stmt->bindParam(':category', $category);
         $stmt->bindParam(':serie', $serie);
@@ -45,6 +46,7 @@ class Db
         $stmt->bindParam(':value', $value);
         $name = $whisky["name"];
         $id = $whisky["whiskeybase_id"];
+        $description = $whisky["description"];
         $bottler = $whisky["bottler"];
         $category = $whisky["category"];
         $serie = $whisky["serie"];

@@ -20,6 +20,7 @@ class Base extends Command
     public $result = [
         "whiskeybase_id" => 0,
         "name" => "",
+        "description" => "",
         "category" => "",
         "bottler" => "",
         "serie" => "",
@@ -63,6 +64,7 @@ class Base extends Command
         $this->result = [
             "whiskeybase_id" => 0,
             "name" => "",
+            "description" => "",
             "category" => "",
             "bottler" => "",
             "serie" => "",
@@ -79,8 +81,9 @@ class Base extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $db = new Db();
+
         for ($i = $input->getArgument('from'); $input->getArgument('to') >= $i; $i++) {
+            $db = new Db();
             $this->getPost($this->host, $i, $db);
             if (strpos($this->result['name'], "Oops") === false) {
                 $whisky = new Whiskybase($this->result);
@@ -94,6 +97,7 @@ class Base extends Command
 
                 echo $i . " / " . $input->getArgument('to') . " time remaining= $remaining \n";
             }
+
             $this->reset();
         }
 
@@ -113,11 +117,23 @@ class Base extends Command
         if (strpos($this->result['name'], "Oops") === false) {
             $this->getDesc($urlContents);
             $this->result['value'] = $this->getValue($urlContents);
+            $this->result['description'] = $this->getOgDesc($urlContents);
         }
 
 
     }
 
+    private function getOgDesc($urlContents)
+    {
+        $dom = new \DOMDocument();
+
+        @$dom->loadHTML($urlContents);
+
+        $xpath = new \DOMXPath($dom);
+        $name = $xpath->query('/html/head/meta[@property="og:description"]/@content');
+
+        return $name->item(0)->textContent;
+    }
     private function getTitle($urlContents)
     {
 
