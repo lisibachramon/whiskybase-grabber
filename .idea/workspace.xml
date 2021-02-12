@@ -88,7 +88,7 @@
       <workItem from="1612699042040" duration="1176000" />
       <workItem from="1612716895783" duration="9019000" />
       <workItem from="1613057410183" duration="2274000" />
-      <workItem from="1613160645782" duration="7309000" />
+      <workItem from="1613160645782" duration="7795000" />
     </task>
     <task id="LOCAL-00001" summary="special char removed">
       <created>1612699684483</created>
@@ -300,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613167959343</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="added balancing">
+      <created>1613168302932</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1613168302932</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,10 +346,10 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="781" y="261" key="RollbackChangesDialog/292.1080.1440.864/0.23.1920.1057@0.23.1920.1057" timestamp="1612792977726" />
-    <state x="320" y="183" key="Vcs.Push.Dialog.v2" timestamp="1613167960385">
+    <state x="320" y="183" key="Vcs.Push.Dialog.v2" timestamp="1613168304477">
       <screen x="0" y="23" width="1440" height="841" />
     </state>
-    <state x="320" y="183" key="Vcs.Push.Dialog.v2/0.23.1440.841@0.23.1440.841" timestamp="1613167960385" />
+    <state x="320" y="183" key="Vcs.Push.Dialog.v2/0.23.1440.841@0.23.1440.841" timestamp="1613168304477" />
     <state x="427" y="224" key="Vcs.Push.Dialog.v2/292.1080.1440.864/0.23.1920.1057@0.23.1920.1057" timestamp="1612792609794" />
     <state x="343" y="61" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1613164900182">
       <screen x="0" y="23" width="1440" height="841" />

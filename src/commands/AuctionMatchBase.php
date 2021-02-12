@@ -66,13 +66,15 @@ class AuctionMatchBase extends Command
             $fist = $fist[0];
 
             $vintage = $re['vintage'];
-            $vintage = str_replace('years old', '', $vintage);
-            $vintage = str_replace('Years Old', '', $vintage);
-            $vintage = str_replace('Year Old', '', $vintage);
-            $vintage = str_replace('year old', '', $vintage);
-            $vintage = str_replace('  ', ' ', $vintage);
 
-            $lot = $auctionLotName . " "  . " " . $vintage . " " . $re['serie'] . " " . $re['bottler'];
+            $serie = $re['serie'];
+            $serie = str_replace('years old', '', $serie);
+            $serie = str_replace('Years Old', '', $serie);
+            $serie = str_replace('Year Old', '', $serie);
+            $serie = str_replace('year old', '', $serie);
+            $serie = str_replace('  ', ' ', $serie);
+
+            $lot = $auctionLotName . " " . $vintage . " " . $serie . " " . $re['bottler'];
 
 
 
@@ -104,14 +106,15 @@ class AuctionMatchBase extends Command
                     {
                         $add = 10;
                     }
-                    if($fragment == $vintage)
+                    if($fragment == $serie)
                     {
                         $add = 20;
                     }
-                    if($fragment == $re['serie'])
+                    if($fragment == $vintage)
                     {
-                        $add = 5;
+                        $add = 10;
                     }
+
 
                     if (!array_key_exists($id, $matches)) {
                         $matches[$id] = $add;
