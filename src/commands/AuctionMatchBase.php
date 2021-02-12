@@ -70,6 +70,7 @@ class AuctionMatchBase extends Command
                 $q = "SELECT whiskeybase_id FROM whisky.whiskeybase where CONCAT(name, bottler, vintage, serie, description) like '%$fragment%' AND strength like '%$strength%' AND size = '$size'" ;
 
                 $fragmentMatches = $db->get($q);
+                echo $q;
                 print_r($fragmentMatches);
                 die;
                 foreach ($fragmentMatches as $fm)
