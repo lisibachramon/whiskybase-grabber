@@ -87,7 +87,7 @@ class AuctionMatchBase extends Command
                 foreach ($fragmentMatches as $fm)
                 {
                     $id = $fm['whiskeybase_id'];
-                    if (!array_key_exists($fm, $matches)) {
+                    if (!array_key_exists($id, $matches)) {
                         $matches[$id] = 1;
                     } else {
                         $matches[$id] = $matches[$id] + 1;
