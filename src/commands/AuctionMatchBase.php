@@ -62,18 +62,12 @@ class AuctionMatchBase extends Command
             $auctionLotName = str_replace('Year Old', '', $auctionLotName);
             $auctionLotName = str_replace('year old', '', $auctionLotName);
             $auctionLotName = str_replace('  ', ' ', $auctionLotName);
-            $auctionLotNameArr = explode(" ", $auctionLotName);
+            $fist = explode(" ", $auctionLotName);
+            $fist = $fist[0];
 
-            $lot = $auctionLotName . " " . $re['serie'] . " " . $re['vintage'] . " " . $re['serie'] . " " . $re['bottler'];
+            $lot = $auctionLotName . " "  . " " . $re['vintage'] . " " . $re['serie'] . " " . $re['bottler'];
 
-            for($i=0; $i<30; $i++)
-            {
-                $lot .= ' ' . $auctionLotNameArr[0];
-            }
-            for($i=0; $i<5; $i++)
-            {
-                $lot .= ' ' .$re['bottler'];
-            }
+
 
             $lot = str_replace('N/A', '', $lot);
             $lot = str_replace('  ', ' ', $lot);
@@ -94,10 +88,28 @@ class AuctionMatchBase extends Command
 
                 foreach ($fragmentMatches as $fm) {
                     $id = $fm['whiskeybase_id'];
+                    $add = 1;
+                    if($fragment == $fist)
+                    {
+                        $add = 20;
+                    }
+                    if($fragment == $re['bottler'])
+                    {
+                        $add = 10;
+                    }
+                    if($fragment == $re['vintage'])
+                    {
+                        $add = 10;
+                    }
+                    if($fragment == $re['serie'])
+                    {
+                        $add = 5;
+                    }
+
                     if (!array_key_exists($id, $matches)) {
-                        $matches[$id] = 1;
+                        $matches[$id] = $add;
                     } else {
-                        $matches[$id] = $matches[$id] + 1;
+                        $matches[$id] = $matches[$id] + $add;
                     }
                 }
 
