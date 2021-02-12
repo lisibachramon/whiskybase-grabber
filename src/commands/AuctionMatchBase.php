@@ -57,10 +57,11 @@ class AuctionMatchBase extends Command
 
 
             $auctionLotName = $re['name'];
-            $auctionLotName = str_replace('years old ', '', $auctionLotName);
-            $auctionLotName = str_replace('Years Old ', '', $auctionLotName);
-            $auctionLotName = str_replace('Year Old ', '', $auctionLotName);
-            $auctionLotName = str_replace('year old ', '', $auctionLotName);
+            $auctionLotName = str_replace('years old', '', $auctionLotName);
+            $auctionLotName = str_replace('Years Old', '', $auctionLotName);
+            $auctionLotName = str_replace('Year Old', '', $auctionLotName);
+            $auctionLotName = str_replace('year old', '', $auctionLotName);
+            $auctionLotName = str_replace('  ', ' ', $auctionLotName);
 
             $auctionLotNameArr = explode(" ", $auctionLotName);
 
