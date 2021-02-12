@@ -37,7 +37,7 @@ class AuctionMatchBase extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $db = new Db();
-        $query = 'SELECT auction_id, name FROM whisky.auction ';
+        $query = 'SELECT auction_id, name, strength, size FROM whisky.auction ';
         if (!empty($input->getArgument('auction'))) {
             $query .= "where auction = '" . $input->getArgument('auction') . "'";
         }
