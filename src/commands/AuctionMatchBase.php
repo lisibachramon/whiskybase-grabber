@@ -75,7 +75,7 @@ class AuctionMatchBase extends Command
             $serie = str_replace('year old', '', $serie);
             $serie = str_replace('  ', ' ', $serie);
 
-            $lot = $auctionLotName . " " . $vintage . " " . $serie . " " . $re['bottler'];
+            $lot = $auctionLotName . " " . $vintage . " ww" . $serie . "www " . $re['bottler'];
 
 
 
