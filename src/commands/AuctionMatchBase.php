@@ -112,7 +112,7 @@ class AuctionMatchBase extends Command
             }
             print_r($auctionLotNameArr);
             print_r($matches);
-            echo array_search($max, $matches);
+            echo array_search($max, $matches) . " | occ: ".$max;
             die;
             if ($count == 1 && ($max / sizeof($auctionLotNameArr)) >= 0.6) {
                 echo "Accuracy: " . ($max / sizeof($auctionLotNameArr)) . "\n";
