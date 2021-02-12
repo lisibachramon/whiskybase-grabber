@@ -56,7 +56,7 @@ class AuctionMatchBase extends Command
             $size = str_replace('.', '', $size);
 
 
-            $auctionLotName = $re['name'] ;
+            $auctionLotName = $re['name'];
             $auctionLotName = str_replace('years old ', '', $auctionLotName);
             $auctionLotName = str_replace('Years Old ', '', $auctionLotName);
             $auctionLotName = str_replace('Year Old ', '', $auctionLotName);
@@ -64,17 +64,19 @@ class AuctionMatchBase extends Command
 
             $auctionLotNameArr = explode(" ", $auctionLotName);
 
-            $matches=[];
-            foreach ($auctionLotNameArr as $fragment)
-            {
-                $q = "SELECT whiskeybase_id FROM whisky.whiskeybase where CONCAT(name, bottler, vintage, serie, description) like '%$fragment%' AND strength like '%$strength%' AND size = '$size'" ;
+            $matches = [];
+            foreach ($auctionLotNameArr as $fragment) {
+                $q = "SELECT whiskeybase_id FROM whisky.whiskeybase where 
+                        (name like '%$fragment%' OR
+                            bottler like '%$fragment%' OR
+                            vintage like '%$fragment%' OR
+                            serie like '%$fragment%' OR
+                            description like '%$fragment%' )
+                        AND strength like '%$strength%' AND size = '$size';";
 
                 $fragmentMatches = $db->get($q);
-                echo $q;
-                print_r($fragmentMatches);
-                die;
-                foreach ($fragmentMatches as $fm)
-                {
+
+                foreach ($fragmentMatches as $fm) {
                     $id = $fm['whiskeybase_id'];
                     if (!array_key_exists($id, $matches)) {
                         $matches[$id] = 1;
@@ -98,7 +100,7 @@ class AuctionMatchBase extends Command
                 echo "Accuracy: " . ($max / sizeof($auctionLotNameArr)) . "\n";
 
                 //$db->insertMatch($re['auction_id'], array_search($max, $matches), ($max / sizeof($auctionLotNameArr)));
-                 print_r(array_keys($matches, max($matches)));
+                print_r(array_keys($matches, max($matches)));
             } else {
                 echo "no secure match \n";
             }
