@@ -37,7 +37,7 @@ class AuctionMatchBase extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $db = new Db();
-        $query = 'SELECT auction_id, name, strength, size FROM whisky.auction ';
+        $query = 'SELECT * FROM whisky.auction ';
         if (!empty($input->getArgument('auction'))) {
             $query .= "where auction = '" . $input->getArgument('auction') . "'";
         }
@@ -63,7 +63,11 @@ class AuctionMatchBase extends Command
             $auctionLotName = str_replace('year old', '', $auctionLotName);
             $auctionLotName = str_replace('  ', ' ', $auctionLotName);
 
-            $auctionLotNameArr = explode(" ", $auctionLotName);
+            $lot = $auctionLotName ." " . $re['serie']." " . $re['vintage']." " . $re['serie']." " . $re['bottler'];
+            $lot = str_replace('N/A', '', $lot);
+            $lot = str_replace('  ', ' ', $lot);
+
+            $auctionLotNameArr = explode(" ", $lot);
 
             $matches = [];
             foreach ($auctionLotNameArr as $fragment) {
