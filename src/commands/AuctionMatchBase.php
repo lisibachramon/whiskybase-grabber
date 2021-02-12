@@ -59,6 +59,9 @@ class AuctionMatchBase extends Command
             $q = "SELECT whiskeybase_id FROM whisky.whiskeybase where strength like '%$strength%' AND size = '$size' ";
 
             $ids = $db->get($q);
+
+            echo $re['name'];
+            echo $q; die;
             $baseIdMatch = " AND (";
             foreach ($ids as $id) {
                 $baseIdMatch .= "whiskeybase_id = " . $id['whiskeybase_id'] . " OR ";
