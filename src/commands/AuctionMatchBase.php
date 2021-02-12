@@ -43,6 +43,7 @@ class AuctionMatchBase extends Command
         }
         $query .= ";";
         $res = $db->get($query);
+        print_r($res);
         foreach ($res as $re) {
             //get correct strength
             $strength = $re['strength'];
