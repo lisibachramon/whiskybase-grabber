@@ -43,7 +43,7 @@ class AuctionMatchBase extends Command
         }
         $query .= ";";
         $res = $db->get($query);
-        print_r($res);
+
         foreach ($res as $re) {
             //get correct strength
             $strength = $re['strength'];
@@ -81,6 +81,7 @@ class AuctionMatchBase extends Command
             foreach ($auctionLotNameArr as $fragment)
             {
                 $q = "SELECT whiskeybase_id FROM whisky.whiskeybase where CONCAT(name, bottler, vintage, serie, description) like '%$fragment%'" . $baseIdMatch;
+                echo $q; die;
                 $fragmentMatches = $db->get($q);
                 foreach ($fragmentMatches as $fm)
                 {
