@@ -68,11 +68,11 @@ class AuctionMatchBase extends Command
 
             for($i=0; $i<30; $i++)
             {
-                $lot .= $auctionLotNameArr[0];
+                $lot .= ' ' . $auctionLotNameArr[0];
             }
             for($i=0; $i<5; $i++)
             {
-                $lot .= $re['bottler'];
+                $lot .= ' ' .$re['bottler'];
             }
 
             $lot = str_replace('N/A', '', $lot);
