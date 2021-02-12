@@ -56,23 +56,6 @@ class AuctionMatchBase extends Command
             $size = str_replace('.', '', $size);
 
 
-            $q = "SELECT whiskeybase_id FROM whisky.whiskeybase where strength like '%$strength%' AND size = '$size' ";
-
-            $ids = $db->get($q);
-
-            echo $re['name'] . " | ";
-
-            $baseIdMatch = " AND (";
-            foreach ($ids as $id) {
-                $baseIdMatch .= "whiskeybase_id = " . $id['whiskeybase_id'] . " OR ";
-            }
-            $baseIdMatch .= ")";
-            $pos = strrpos($baseIdMatch, "OR");
-
-            if ($pos !== false) {
-                $baseIdMatch = substr_replace($baseIdMatch, "", $pos, strlen("OR"));
-            }
-
             $auctionLotName = $re['name'] ;
             $auctionLotName = str_replace('years old ', '', $auctionLotName);
             $auctionLotName = str_replace('Years Old ', '', $auctionLotName);
@@ -84,7 +67,7 @@ class AuctionMatchBase extends Command
             $matches=[];
             foreach ($auctionLotNameArr as $fragment)
             {
-                $q = "SELECT whiskeybase_id FROM whisky.whiskeybase where CONCAT(name, bottler, vintage, serie, description) like '%$fragment%'" . $baseIdMatch;
+                $q = "SELECT whiskeybase_id FROM whisky.whiskeybase where CONCAT(name, bottler, vintage, serie, description) like '%$fragment%' AND strength like '%$strength%' AND size = '$size'" ;
 
                 $fragmentMatches = $db->get($q);
                 print_r($fragmentMatches);
