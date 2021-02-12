@@ -61,6 +61,7 @@ class AuctionMatchBase extends Command
             $auctionLotName = str_replace('Years Old', '', $auctionLotName);
             $auctionLotName = str_replace('Year Old', '', $auctionLotName);
             $auctionLotName = str_replace('year old', '', $auctionLotName);
+            $auctionLotName = str_replace('and', '', $auctionLotName);
             $auctionLotName = str_replace('  ', ' ', $auctionLotName);
             $fist = explode(" ", $auctionLotName);
             $fist = $fist[0];
@@ -108,7 +109,7 @@ class AuctionMatchBase extends Command
                     }
                     if($fragment == $serie)
                     {
-                        $add = 20;
+                        $add = 1000;
                     }
                     if($fragment == $vintage)
                     {
