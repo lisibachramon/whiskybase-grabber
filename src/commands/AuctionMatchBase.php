@@ -82,7 +82,8 @@ class AuctionMatchBase extends Command
             $lot = str_replace('US Import', ' ', $lot);
             $lot = str_replace('cl', '0', $lot);
             $lot = str_replace('ml', '', $lot);
-            $lot = str_replace('l', '000', $lot);
+            $lot = str_replace('1l', '1000', $lot);
+            $lot = str_replace('1.5l', '1500', $lot);
             $lot = str_replace('.', '', $lot);
 
             $lot = str_replace('  ', ' ', $lot);
