@@ -101,8 +101,7 @@ class AuctionMatchBase extends Command
 
             }
             $q .= "strength like '%$strength%' AND size = '$size' LIMIT 1;";
-            echo $q;
-            die;
+
             $fragmentMatches = $db->get($q);
 
             if (isset($fragmentMatches[0])) {
