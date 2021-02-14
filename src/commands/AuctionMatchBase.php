@@ -92,7 +92,11 @@ class AuctionMatchBase extends Command
 
             $q = "SELECT whiskeybase_id, name FROM whisky.whiskeybase where ";
             foreach ($auctionLotNameArr as $fragment) {
-                $q .= "Concat(description, casktype, category, bottler) like '%$fragment%' AND ";
+                $q .= "(description like '%$fragment%' OR ";
+                $q .= "casktype like '%$fragment%' OR ";
+                $q .= "category like '%$fragment%' OR ";
+                $q .= "bottler like '%$fragment%' ) ";
+
 
             }
             $q .= "strength like '%$strength%' AND size = '$size' LIMIT 1;";

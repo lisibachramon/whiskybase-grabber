@@ -87,7 +87,7 @@
       <workItem from="1612699042040" duration="1176000" />
       <workItem from="1612716895783" duration="9019000" />
       <workItem from="1613057410183" duration="2274000" />
-      <workItem from="1613160645782" duration="11183000" />
+      <workItem from="1613160645782" duration="11323000" />
     </task>
     <task id="LOCAL-00001" summary="special char removed">
       <created>1612699684483</created>
@@ -355,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613303863467</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="added refined match">
+      <created>1613303946872</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1613303946872</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -395,10 +402,10 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="781" y="261" key="RollbackChangesDialog/292.1080.1440.864/0.23.1920.1057@0.23.1920.1057" timestamp="1612792977726" />
-    <state x="320" y="183" key="Vcs.Push.Dialog.v2" timestamp="1613303868048">
+    <state x="320" y="183" key="Vcs.Push.Dialog.v2" timestamp="1613303949250">
       <screen x="0" y="23" width="1440" height="841" />
     </state>
-    <state x="320" y="183" key="Vcs.Push.Dialog.v2/0.23.1440.841@0.23.1440.841" timestamp="1613303868048" />
+    <state x="320" y="183" key="Vcs.Push.Dialog.v2/0.23.1440.841@0.23.1440.841" timestamp="1613303949250" />
     <state x="427" y="224" key="Vcs.Push.Dialog.v2/292.1080.1440.864/0.23.1920.1057@0.23.1920.1057" timestamp="1612792609794" />
     <state x="343" y="61" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1613164900182">
       <screen x="0" y="23" width="1440" height="841" />
