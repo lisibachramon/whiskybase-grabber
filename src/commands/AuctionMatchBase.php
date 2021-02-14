@@ -83,25 +83,22 @@ class AuctionMatchBase extends Command
             $auctionLotNameArr = explode(" ", $lot);
             $auctionLotNameArr = array_unique($auctionLotNameArr);
 
-            $q = "SELECT whiskeybase_id FROM whisky.whiskeybase where ";
+            $q = "SELECT whiskeybase_id, name FROM whisky.whiskeybase where ";
             foreach ($auctionLotNameArr as $fragment) {
                 $q .= "description like '%$fragment%' AND ";
 
             }
-            $q .= "strength like '%$strength%' AND size = '$size';";
+            $q .= "strength like '%$strength%' AND size = '$size' LIMIT 1;";
             $fragmentMatches = $db->get($q);
 
-            print_r($auctionLotNameArr);
-            print_r($fragmentMatches);
+            if (isset($fragmentMatches[0])) {
+                echo "Matched (auction): " . $re['auction_id'] . '; ' . $re['name']
+                    . " \n with: " . $fragmentMatches[0]['whiskeybase_id'] . "; " . $fragmentMatches[0]['name'] . "\n";
 
-            die;
-            if ($count == 1 && ($max / sizeof($auctionLotNameArr)) >= 0.6) {
-                echo "Accuracy: " . ($max / sizeof($auctionLotNameArr)) . "\n";
+                $db->insertMatch($re['auction_id'], $fragmentMatches[0]['whiskeybase_id'], 1);
 
-                //$db->insertMatch($re['auction_id'], array_search($max, $matches), ($max / sizeof($auctionLotNameArr)));
-                print_r(array_keys($matches, max($matches)));
             } else {
-                echo "no secure match \n";
+                echo "no secure match for". $re['auction_id'] . '; ' . $re['name'] . "\n";
             }
         }
     }

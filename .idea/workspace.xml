@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b356bcc1-a809-45da-9f89-aa2d1cfe1bb5" name="Default" comment="added balancing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/AuctionMatchBase.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/AuctionMatchBase.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +88,7 @@
       <workItem from="1612699042040" duration="1176000" />
       <workItem from="1612716895783" duration="9019000" />
       <workItem from="1613057410183" duration="2274000" />
-      <workItem from="1613160645782" duration="9964000" />
+      <workItem from="1613160645782" duration="10568000" />
     </task>
     <task id="LOCAL-00001" summary="special char removed">
       <created>1612699684483</created>
@@ -336,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613169155478</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="added balancing">
+      <created>1613302706633</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1613302706633</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,10 +381,10 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="781" y="261" key="RollbackChangesDialog/292.1080.1440.864/0.23.1920.1057@0.23.1920.1057" timestamp="1612792977726" />
-    <state x="320" y="183" key="Vcs.Push.Dialog.v2" timestamp="1613169156619">
+    <state x="320" y="183" key="Vcs.Push.Dialog.v2" timestamp="1613302707935">
       <screen x="0" y="23" width="1440" height="841" />
     </state>
-    <state x="320" y="183" key="Vcs.Push.Dialog.v2/0.23.1440.841@0.23.1440.841" timestamp="1613169156619" />
+    <state x="320" y="183" key="Vcs.Push.Dialog.v2/0.23.1440.841@0.23.1440.841" timestamp="1613302707935" />
     <state x="427" y="224" key="Vcs.Push.Dialog.v2/292.1080.1440.864/0.23.1920.1057@0.23.1920.1057" timestamp="1612792609794" />
     <state x="343" y="61" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1613164900182">
       <screen x="0" y="23" width="1440" height="841" />
