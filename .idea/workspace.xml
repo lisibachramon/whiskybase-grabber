@@ -19,8 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b356bcc1-a809-45da-9f89-aa2d1cfe1bb5" name="Default" comment="added balancing">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b356bcc1-a809-45da-9f89-aa2d1cfe1bb5" name="Default" comment="added refined match">
       <change beforePath="$PROJECT_DIR$/src/commands/AuctionMatchBase.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/AuctionMatchBase.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +87,7 @@
       <workItem from="1612699042040" duration="1176000" />
       <workItem from="1612716895783" duration="9019000" />
       <workItem from="1613057410183" duration="2274000" />
-      <workItem from="1613160645782" duration="11095000" />
+      <workItem from="1613160645782" duration="11183000" />
     </task>
     <task id="LOCAL-00001" summary="special char removed">
       <created>1612699684483</created>
@@ -349,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613303309227</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="added refined match">
+      <created>1613303863467</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1613303863467</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,7 +379,8 @@
     <MESSAGE value="added description for matching" />
     <MESSAGE value="just checking on the server" />
     <MESSAGE value="added balancing" />
-    <option name="LAST_COMMIT_MESSAGE" value="added balancing" />
+    <MESSAGE value="added refined match" />
+    <option name="LAST_COMMIT_MESSAGE" value="added refined match" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612527149971">
@@ -388,10 +395,10 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="781" y="261" key="RollbackChangesDialog/292.1080.1440.864/0.23.1920.1057@0.23.1920.1057" timestamp="1612792977726" />
-    <state x="320" y="183" key="Vcs.Push.Dialog.v2" timestamp="1613303310438">
+    <state x="320" y="183" key="Vcs.Push.Dialog.v2" timestamp="1613303868048">
       <screen x="0" y="23" width="1440" height="841" />
     </state>
-    <state x="320" y="183" key="Vcs.Push.Dialog.v2/0.23.1440.841@0.23.1440.841" timestamp="1613303310438" />
+    <state x="320" y="183" key="Vcs.Push.Dialog.v2/0.23.1440.841@0.23.1440.841" timestamp="1613303868048" />
     <state x="427" y="224" key="Vcs.Push.Dialog.v2/292.1080.1440.864/0.23.1920.1057@0.23.1920.1057" timestamp="1612792609794" />
     <state x="343" y="61" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1613164900182">
       <screen x="0" y="23" width="1440" height="841" />
