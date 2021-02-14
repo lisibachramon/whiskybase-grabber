@@ -97,6 +97,9 @@ class AuctionMatchBase extends Command
                 $q .= "casktype like '%$fragment%' OR ";
                 $q .= "category like '%$fragment%' OR ";
                 $q .= "serie like '%$fragment%' OR ";
+                $q .= "vintage like '%$fragment%' OR ";
+                $q .= "bottled like '%$fragment%' OR ";
+                $q .= "number like '%$fragment%' OR ";
                 $q .= "bottler like '%$fragment%' ) AND ";
 
 
