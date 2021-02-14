@@ -111,13 +111,13 @@ class AuctionMatchBase extends Command
             $fragmentMatches = $db->get($q);
 
             if (isset($fragmentMatches[0])) {
-                echo "\033[31m Matched (auction):  \033[0m " . $re['name']
-                    . " \n with: " . $fragmentMatches[0]['name'] . "\n";
+                echo "\033[31m Matched (auction):  \033[0m " . $re['auction_id']
+                    . " \n with(base): " . $fragmentMatches[0]['whiskeybase_id'] . "\n";
 
                 $db->insertMatch($re['auction_id'], $fragmentMatches[0]['whiskeybase_id'], 1);
                 $matches++;
             } else {
-                echo "\033[95m No Match for \033[0m " . $re['name'] . "\n";
+                echo "\033[95m No Match for \033[0m " . $re['auction_id'] . "\n";
                 $noMatches++;
             }
             echo "\n############################\n";
