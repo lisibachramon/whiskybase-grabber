@@ -36,6 +36,8 @@ class AuctionMatchBase extends Command
     //Don't try to understand this... Not even the author does..
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $matches = 0;
+        $noMatches = 0;
         $db = new Db();
         $query = 'SELECT * FROM whisky.auction ';
         if (!empty($input->getArgument('auction'))) {
@@ -113,12 +115,14 @@ class AuctionMatchBase extends Command
                     . " \n with: " . $fragmentMatches[0]['name'] . "\n";
 
                 $db->insertMatch($re['auction_id'], $fragmentMatches[0]['whiskeybase_id'], 1);
-
+                $matches++;
             } else {
-                echo "\033[95m No Match for \033[0m ". $re['name'] . "\n";
+                echo "\033[95m No Match for \033[0m " . $re['name'] . "\n";
+                $noMatches++;
             }
-            echo "\n";
+            echo "\n############################\n";
         }
+        echo "\033[33m Matched " . $matches . " / " . ($matches + $noMatches) . "\033[0m ";
     }
 
 
