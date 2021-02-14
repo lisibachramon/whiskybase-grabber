@@ -78,6 +78,13 @@ class AuctionMatchBase extends Command
             $lot = $auctionLotName . " " . $vintage;
 
             $lot = str_replace('N/A', '', $lot);
+            $lot = str_replace(' s ', ' ', $lot);
+            $lot = str_replace('US Import', ' ', $lot);
+            $lot = str_replace('cl', '0', $lot);
+            $lot = str_replace('ml', '', $lot);
+            $lot = str_replace('l', '000', $lot);
+            $lot = str_replace('.', '', $lot);
+
             $lot = str_replace('  ', ' ', $lot);
 
             $auctionLotNameArr = explode(" ", $lot);
@@ -85,7 +92,7 @@ class AuctionMatchBase extends Command
 
             $q = "SELECT whiskeybase_id, name FROM whisky.whiskeybase where ";
             foreach ($auctionLotNameArr as $fragment) {
-                $q .= "description like '%$fragment%' AND ";
+                $q .= "Concat(description, casktype, category, bottler) like '%$fragment%' AND ";
 
             }
             $q .= "strength like '%$strength%' AND size = '$size' LIMIT 1;";
