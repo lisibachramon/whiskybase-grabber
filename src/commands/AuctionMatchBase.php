@@ -79,7 +79,7 @@ class AuctionMatchBase extends Command
 
             $lot = str_replace('N/A', '', $lot);
             $lot = str_replace(' s ', ' ', $lot);
-            $lot = str_replace('US Import', ' ', $lot);
+            $lot = str_replace(' US Import', '', $lot);
             $lot = str_replace('cl', '0', $lot);
             $lot = str_replace('ml', '', $lot);
             $lot = str_replace('1l', '1000', $lot);
@@ -109,13 +109,13 @@ class AuctionMatchBase extends Command
             $fragmentMatches = $db->get($q);
 
             if (isset($fragmentMatches[0])) {
-                echo "\033[31m Matched (auction):  \033[0m " . $re['auction_id'] . '; ' . $re['name']
-                    . " \n with: " . $fragmentMatches[0]['whiskeybase_id'] . "; " . $fragmentMatches[0]['name'] . "\n";
+                echo "\033[31m Matched (auction):  \033[0m " . $re['name']
+                    . " \n with: " . $fragmentMatches[0]['name'] . "\n";
 
                 $db->insertMatch($re['auction_id'], $fragmentMatches[0]['whiskeybase_id'], 1);
 
             } else {
-                echo "\033[31m No Match for id \033[0m ". $re['auction_id'] . '; ' . $re['name'] . "\n";
+                echo "\033[95m No Match for \033[0m ". $re['name'] . "\n";
             }
             echo "\n";
         }
