@@ -93,10 +93,10 @@ class Auction extends Command
                 $auction = new Whiskyauctioneer($this->result);
                 $auction->verify();
                 $db->insertAuction($auction->getArrayCopy());
-
             }
             $this->reset();
         } else {
+
             echo "Getting posts for " . $this->auction . "... Might Fuck up your Computer for a while....";
             $this->getLinks();
             echo sizeof($this->links) . "\n";
