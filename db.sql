@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `auction` (
 CREATE TABLE IF NOT EXISTS `whiskeybase` (
   `whiskeybase_id` int(11) NOT NULL,
   `name` varchar(160) DEFAULT NULL,
-  `description` varchar(500) DEFAULT NULL,
+  `description` varchar(800) DEFAULT NULL,
   `bottler` varchar(160) DEFAULT NULL,
   `category` varchar(160) DEFAULT NULL,
   `serie` varchar(160) DEFAULT NULL,

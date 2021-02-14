@@ -75,67 +75,25 @@ class AuctionMatchBase extends Command
             $serie = str_replace(' year old', '', $serie);
             $serie = str_replace('  ', ' ', $serie);
 
-            $lot = $auctionLotName . " " . $vintage . " " . $serie . " " . $re['bottler'];
-
-
+            $lot = $auctionLotName . " " . $vintage;
 
             $lot = str_replace('N/A', '', $lot);
             $lot = str_replace('  ', ' ', $lot);
 
             $auctionLotNameArr = explode(" ", $lot);
+            $auctionLotNameArr = array_unique($auctionLotNameArr);
 
-            $matches = [];
+            $q = "SELECT whiskeybase_id FROM whisky.whiskeybase where ";
             foreach ($auctionLotNameArr as $fragment) {
-                $q = "SELECT whiskeybase_id FROM whisky.whiskeybase where 
-                        (name like '%$fragment%' OR
-                            bottler like '%$fragment%' OR
-                            vintage like '%$fragment%' OR
-                            serie like '%$fragment%' OR
-                            description like '%$fragment%' )
-                        AND strength like '%$strength%' AND size = '$size';";
-
-                $fragmentMatches = $db->get($q);
-
-                foreach ($fragmentMatches as $fm) {
-                    $id = $fm['whiskeybase_id'];
-                    $add = 1;
-                    if($fragment == $fist)
-                    {
-                        $add = 30;
-                    }
-                    if($fragment == $re['bottler'])
-                    {
-                        $add = 10;
-                    }
-
-                    if($fragment == $vintage)
-                    {
-                        $add = 10;
-                    }
-                    if($fragment == $serie)
-                    {
-                        $add = 1000;
-                    }
-
-                    if (!array_key_exists($id, $matches)) {
-                        $matches[$id] = $add;
-                    } else {
-                        $matches[$id] = $matches[$id] + $add;
-                    }
-                }
+                $q .= "description like '%$fragment%' AND ";
 
             }
-            $max = max($matches);
+            $q .= "strength like '%$strength%' AND size = '$size';";
+            $fragmentMatches = $db->get($q);
 
-            $count = 0;
-            foreach ($matches as $item) {
-                if ($item === $max) {
-                    $count++;
-                }
-            }
             print_r($auctionLotNameArr);
-            print_r($matches);
-            echo array_search($max, $matches) . " | occ: ".$max;
+            print_r($fragmentMatches);
+
             die;
             if ($count == 1 && ($max / sizeof($auctionLotNameArr)) >= 0.6) {
                 echo "Accuracy: " . ($max / sizeof($auctionLotNameArr)) . "\n";
