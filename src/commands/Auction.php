@@ -124,7 +124,15 @@ class Auction extends Command
                 $i++;
 
             }
+            echo "Start Matching in 30 sec..." . "\n";
 
+            for ($i = 0; $i < 30; $i++)
+            {
+                echo 30 - $i . "\n";
+                sleep(1);
+            }
+
+            shell_exec('php ' . getcwd() . '/cli.php auto-match ' . $this->auction .  '" > /dev/null 2>&1 &');
 
         }
 
