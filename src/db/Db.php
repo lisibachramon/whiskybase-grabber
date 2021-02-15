@@ -109,6 +109,18 @@ class Db
         $stmt->execute();
         return;
     }
+    public function cleanAuction($auction)
+    {
+
+        $stmt = $this->dbh->prepare("DELETE auction_has_whiskeybase FROM `whisky`.`auction_has_whiskeybase` LEFT JOIN auction ON auction.auction_id = auction_has_whiskeybase.fk_auction_id WHERE auction = :auction;");
+        $stmt->bindParam(':auction', $auction);
+        $stmt->execute();
+
+        $stmt = $this->dbh->prepare("DELETE FROM `whisky`.`auction` WHERE auction = :auction;");
+        $stmt->bindParam(':auction', $auction);
+        $stmt->execute();
+        return;
+    }
 
 
 }

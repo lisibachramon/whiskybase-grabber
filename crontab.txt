@@ -1,2 +1,2 @@
-0 */2 * * *  /usr/local/bin/php /var/www/site/cli.php get-auction 601d5378e2543 >> /var/log/script.log
+0 */2 * * *  /usr/local/bin/php /var/www/site/cli.php get-auction 6029386f2b603 >> /var/log/script.log
 0 0 */3 * *  /usr/local/bin/php /var/www/site/cli.php get-posts 1 200000 >> /var/log/script.log
