@@ -96,10 +96,10 @@ class Auction extends Command
             }
             $this->reset();
         } else {
-            echo "Cleaning Data and matches for ". $this->auction. "\n";
+            echo "\033[95m Cleaning Data and matches for \033[0m ". $this->auction. "\n" . "\n";
             $db = new Db();
             $db->cleanAuction($this->auction);
-            echo "Getting posts for " . $this->auction . "... Might Fuck up your Computer for a while....";
+            echo "\033[95m Getting posts for \033[0m " . $this->auction . "\033[95m ... Might Fuck up your Computer for a while.... \033[0m";
             $this->getLinks();
             echo sizeof($this->links) . "\n";
 
@@ -107,7 +107,7 @@ class Auction extends Command
             $start = microtime(true);
             $this->getPost("https://www.whiskyauctioneer.com", $this->links[0]);
             $time_elapsed_secs = round((microtime(true) - $start) * 1000000);
-            echo "\n Takes " . $time_elapsed_secs . " Microseconds for 1 post, should take " .
+            echo "\n \033[95m Takes \033[0m " . $time_elapsed_secs . " Microseconds for 1 post, should take " .
                 round(sizeof($this->links) * $time_elapsed_secs / 1000000) / 60 . " minutes..." . "\n";//
 
 
@@ -118,13 +118,13 @@ class Auction extends Command
                 shell_exec('php ' . getcwd() . '/cli.php get-auction ' . $this->auction . ' "' . $link . '" > /dev/null 2>&1 &');
                 echo $i . " /" . sizeof($this->links) . "\n";
                 if (($i % 200) == 0) {
-                    echo "Cooling Down..." . "\n";
+                    echo "\033[95m Cooling Down... \033[0m" . "\n";
                     sleep(15);
                 }
                 $i++;
 
             }
-            echo "Start Matching in 30 sec..." . "\n";
+            echo "\033[95m Start Matching in 30 sec... \033[0m" . "\n";
 
             for ($i = 0; $i < 30; $i++)
             {
@@ -132,7 +132,7 @@ class Auction extends Command
                 sleep(1);
             }
 
-            shell_exec('php ' . getcwd() . '/cli.php auto-match ' . $this->auction .  '" > /dev/null 2>&1 &');
+            shell_exec('php ' . getcwd() . '/cli.php auto-match ' . $this->auction .  ' > /dev/null 2>&1 &');
 
         }
 
