@@ -20,7 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b356bcc1-a809-45da-9f89-aa2d1cfe1bb5" name="Default" comment="added refined matchadded refined match">
-      <change beforePath="$PROJECT_DIR$/src/commands/Auction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Auction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ArrayObject.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ArrayObject.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,21 +88,7 @@
       <workItem from="1612699042040" duration="1176000" />
       <workItem from="1612716895783" duration="9019000" />
       <workItem from="1613057410183" duration="2274000" />
-      <workItem from="1613160645782" duration="16307000" />
-    </task>
-    <task id="LOCAL-00008" summary="just checking on the server">
-      <created>1613164047543</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1613164047543</updated>
-    </task>
-    <task id="LOCAL-00009" summary="just checking on the server">
-      <created>1613164086150</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1613164086150</updated>
+      <workItem from="1613160645782" duration="16737000" />
     </task>
     <task id="LOCAL-00010" summary="just checking on the server">
       <created>1613164243607</created>
@@ -432,7 +419,21 @@
       <option name="project" value="LOCAL" />
       <updated>1613384867498</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="added refined matchadded refined match">
+      <created>1613385231559</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1613385231559</updated>
+    </task>
+    <task id="LOCAL-00058" summary="added refined matchadded refined match">
+      <created>1613385286669</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1613385286669</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -473,12 +474,12 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="781" y="261" key="RollbackChangesDialog/292.1080.1440.864/0.23.1920.1057@0.23.1920.1057" timestamp="1612792977726" />
-    <state x="612" y="1244" key="Vcs.Push.Dialog.v2" timestamp="1613384868766">
+    <state x="612" y="1244" key="Vcs.Push.Dialog.v2" timestamp="1613385288276">
       <screen x="292" y="1080" width="1440" height="864" />
     </state>
     <state x="320" y="183" key="Vcs.Push.Dialog.v2/0.23.1440.841@0.23.1440.841" timestamp="1613306813519" />
     <state x="427" y="224" key="Vcs.Push.Dialog.v2/292.1080.1440.864/0.23.1920.1057@0.23.1920.1057" timestamp="1612792609794" />
-    <state x="612" y="1244" key="Vcs.Push.Dialog.v2/292.1080.1440.864/0.23.1920.1057@292.1080.1440.864" timestamp="1613384868766" />
+    <state x="612" y="1244" key="Vcs.Push.Dialog.v2/292.1080.1440.864/0.23.1920.1057@292.1080.1440.864" timestamp="1613385288276" />
     <state x="635" y="1119" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1613385213267">
       <screen x="292" y="1080" width="1440" height="864" />
     </state>
