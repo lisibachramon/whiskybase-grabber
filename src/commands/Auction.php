@@ -96,7 +96,7 @@ class Auction extends Command
             }
             $this->reset();
         } else {
-            echo "Cleaning Data and matches for ". $this->auction;
+            echo "Cleaning Data and matches for ". $this->auction. "\n";
             $db = new Db();
             $db->cleanAuction($this->auction);
             echo "Getting posts for " . $this->auction . "... Might Fuck up your Computer for a while....";
