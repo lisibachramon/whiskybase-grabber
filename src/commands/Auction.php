@@ -133,7 +133,7 @@ class Auction extends Command
             }
 
             shell_exec('php ' . getcwd() . '/cli.php auto-match ' . $this->auction .  ' > /dev/null 2>&1 &');
-
+            echo "\033[95m Matching started in background \033[0m" . "\n";
         }
 
     }
