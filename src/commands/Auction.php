@@ -114,7 +114,7 @@ class Auction extends Command
             foreach ($this->links as $link) {
                 //echo 'php '.getcwd().'/cli.php get-auction '. $this->auction . ' "' . $link.'"';
                 usleep($time_elapsed_secs / 20);
-                echo 'php ' . getcwd() . '/cli.php get-auction ' . $this->auction . ' "' . $link . '" > /dev/null 2>&1 &';
+               // echo 'php ' . getcwd() . '/cli.php get-auction ' . $this->auction . ' "' . $link . '" > /dev/null 2>&1 &';
                 shell_exec('php ' . getcwd() . '/cli.php get-auction ' . $this->auction . ' "' . $link . '" > /dev/null 2>&1 &');
                 echo $i . " /" . sizeof($this->links) . "\n";
                 if (($i % 200) == 0) {
